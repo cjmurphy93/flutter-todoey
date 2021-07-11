@@ -5,8 +5,6 @@ class AddTaskScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xff757575),
-      child: Container(
         padding: EdgeInsets.all(20.0),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -44,7 +42,7 @@ class AddTaskScreen extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
+      );
+
   }
 }
