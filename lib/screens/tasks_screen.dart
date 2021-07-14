@@ -4,13 +4,12 @@ import 'package:todoey_flutter/screens/add_task_screen.dart';
 import 'package:todoey_flutter/models/task.dart';
 
 class TasksScreen extends StatefulWidget {
-
   @override
   _TasksScreenState createState() => _TasksScreenState();
 }
 
 class _TasksScreenState extends State<TasksScreen> {
-  List<Task> tasks = [Task(name: 'Buy milk')];
+  List<Task> tasks = [];
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +22,11 @@ class _TasksScreenState extends State<TasksScreen> {
           showModalBottomSheet(
             context: context,
             isScrollControlled: true,
-            builder: (context) => AddTaskScreen(),
+            builder: (context) => AddTaskScreen((newTaskTitle) {
+              tasks.add(
+                Task(name: newTaskTitle),
+              );
+            }),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20.0),

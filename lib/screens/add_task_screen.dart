@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:todoey_flutter/constants.dart';
 
 class AddTaskScreen extends StatelessWidget {
+
+  final Function addTaskCallback;
+
+  AddTaskScreen(this.addTaskCallback);
+
   @override
   Widget build(BuildContext context) {
+    String? newTaskTitle;
+
     return SingleChildScrollView(
       padding: EdgeInsets.only(
         bottom: MediaQuery.of(context).viewInsets.bottom,
@@ -37,10 +44,13 @@ class AddTaskScreen extends StatelessWidget {
                 focusedBorder: kTextFieldBorder,
                 enabledBorder: kTextFieldBorder,
               ),
+              onChanged: (newText) {
+                newTaskTitle = newText;
+              },
             ),
             SizedBox(height: 20),
             TextButton(
-              onPressed: () {},
+              onPressed: () {addTaskCallback(newTaskTitle);},
               child: Text('Add'),
               style: kFlatButtonStyle,
             ),
