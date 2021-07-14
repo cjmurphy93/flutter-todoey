@@ -26,6 +26,7 @@ class _TasksScreenState extends State<TasksScreen> {
               tasks.add(
                 Task(name: newTaskTitle),
               );
+              Navigator.pop(context);
             }),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
