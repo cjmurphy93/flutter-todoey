@@ -4,7 +4,11 @@ import 'package:todoey_flutter/constants.dart';
 class AddTaskScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SingleChildScrollView(
+      padding: EdgeInsets.only(
+        bottom: MediaQuery.of(context).viewInsets.bottom,
+      ),
+      child: Container(
         padding: EdgeInsets.all(20.0),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -42,7 +46,7 @@ class AddTaskScreen extends StatelessWidget {
             ),
           ],
         ),
-      );
-
+      ),
+    );
   }
 }
