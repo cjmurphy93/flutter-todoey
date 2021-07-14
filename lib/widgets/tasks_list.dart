@@ -8,7 +8,7 @@ class TasksList extends StatefulWidget {
 }
 
 class _TasksListState extends State<TasksList> {
-  List<Task> tasks = [];
+  List<Task> tasks = [Task(name: 'Buy milk')];
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +17,11 @@ class _TasksListState extends State<TasksList> {
         return TaskTile(
           taskTitle: tasks[index].name,
           isChecked: tasks[index].isDone,
+          checkboxCallback: (checkboxState) {
+            setState(() {
+              tasks[index].toggleDone();
+            });
+          }
         );
       },
       itemCount: tasks.length,
