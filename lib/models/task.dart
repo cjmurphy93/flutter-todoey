@@ -1,5 +1,5 @@
 class Task {
-  final String name;
+  final String? name;
   bool isDone;
 
   Task({

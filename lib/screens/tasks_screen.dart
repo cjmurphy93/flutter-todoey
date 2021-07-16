@@ -16,14 +16,7 @@ class TasksScreen extends StatelessWidget {
           showModalBottomSheet(
             context: context,
             isScrollControlled: true,
-            builder: (context) => AddTaskScreen((newTaskTitle) {
-              // setState(() {
-              //   tasks.add(
-              //     Task(name: newTaskTitle),
-              //   );
-              // });
-              Navigator.pop(context);
-            }),
+            builder: (context) => AddTaskScreen(),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(20.0),

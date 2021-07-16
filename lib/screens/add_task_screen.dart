@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:todoey_flutter/models/task.dart';
 import 'package:todoey_flutter/constants.dart';
 
 class AddTaskScreen extends StatelessWidget {
-  final Function addTaskCallback;
 
-  AddTaskScreen(this.addTaskCallback);
 
   @override
   Widget build(BuildContext context) {
@@ -49,10 +48,7 @@ class AddTaskScreen extends StatelessWidget {
             SizedBox(height: 20),
             TextButton(
               onPressed: () {
-                // if (newTaskTitle != null) {
-                  addTaskCallback(newTaskTitle);
-                  // newTaskTitle = null;
-                // }
+                final task = Task(name: newTaskTitle);
               },
               child: Text('Add'),
               style: kFlatButtonStyle,
